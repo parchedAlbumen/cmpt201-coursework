@@ -8,7 +8,7 @@ int main() {
   char *sentence = NULL;
   size_t len = 0;
   ssize_t num_char = getline(&sentence, &len, stdin);
-  while (num_char != -1) {
+  while (num_char != -1 && sentence[0] != '\n') {
     if (num_char == -1) {
       perror("getline failed!");
       exit(EXIT_FAILURE);
